@@ -1,22 +1,36 @@
 package com.xmen.domain.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import com.xmen.domain.models.RequestInHeadersDTO;
+import com.xmen.domain.repository.XmenRepository;
+import com.xmen.domain.models.dna;
 
 @Component
+@EnableMongoRepositories("com.xmen.domain.repository")
 public class XmenService {
+	
+	@Autowired
+	private XmenRepository xmenRepository; 
 
 	public ResponseEntity<Object> validateMutants(RequestInHeadersDTO requestInHeaders, String request) {
 		String[] ary = request.split(":");
 		String nitrogenBase = ary[1];
 		String sNitrogenBase = nitrogenBase.replace("[", "").replace("]", "").replace("}", "").replace("\"", "")
 				.replaceAll("\\s+", "");
-		String[] dna = sNitrogenBase.split(",");
+		String[] dna = sNitrogenBase.split(",");		
+		dna dnaMongoDB = new dna();
+		dnaMongoDB.setDna(dna);		
 		if (isMutant(dna)) {
+			dnaMongoDB.setIsmutant(true);
+			xmenRepository.save(dnaMongoDB);
 			return new ResponseEntity<>(Boolean.TRUE, HttpStatus.OK);
-		} else {
+		} else {			
+			dnaMongoDB.setIsmutant(false);
+			xmenRepository.save(dnaMongoDB);
 			return new ResponseEntity<>(Boolean.FALSE, HttpStatus.FORBIDDEN);
 		}
 	}
