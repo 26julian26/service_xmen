@@ -23,9 +23,22 @@ docker run 26julian26/ms-xmenadn-service:1.0.1
 
 1.1. Base de datos MongoDB
 
-La imagen está apuntando a una base de datos en https://cloud.mongodb.com/ pero si se desea montar los fuentes en el ambiente local se deja un backup de la la base de datos en la carpeta Xmen
+La imagen está apuntando a una base de datos en https://cloud.mongodb.com/ y funciona sin necesidad de realizar ninguna parametrización, pero si se desea montar los fuentes en el ambiente local se deja un backup de la la base de datos en la carpeta Xmen
 
 ![image](https://user-images.githubusercontent.com/71658927/159723844-09141e7b-0cb9-4294-8e05-8add73787c8f.png)
+
+![image](https://user-images.githubusercontent.com/71658927/159727495-778f0149-a57f-4f17-9310-3694ca8ff7dd.png)
+
+Para conectarse a la base de datos en https://cloud.mongodb.com/ se debe utilizar el siguiente connection String:
+
+mongodb+srv://admin:Bogota2020+M@cluster0.nxbbh.mongodb.net/Xmen?retryWrites=true
+
+Para nuestro caso se utilizó la aplicación de MongoDB Compass
+
+![image](https://user-images.githubusercontent.com/71658927/159728777-6fe6562b-7c5b-4cc8-92b9-abfb8ef73b04.png)
+
+
+
 
 
 
