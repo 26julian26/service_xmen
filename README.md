@@ -56,6 +56,22 @@ Para realizar la prueba del servicio de stats se debe abrir el request â€œLocalâ
 
 1.4. Pruebas del API Google Cloud
 
+Para probar el API en Google Cloud se debe ejecutar los postman de la carpeta Cloud_Google
+
+https://xmen-344921.uc.r.appspot.com/mutant
+
+![image](https://user-images.githubusercontent.com/71658927/159737197-3722347a-dea6-4d2a-89af-d4b9d74c3fed.png)
+
+https://xmen-344921.uc.r.appspot.com/stats
+
+![image](https://user-images.githubusercontent.com/71658927/159737297-449fda1d-c5d0-458c-9111-fe9739f2384b.png)
+
+1.5. Swagger - API  - XMEN
+
+https://xmen-344921.uc.r.appspot.com/swagger-ui/index.html#/
+
+![image](https://user-images.githubusercontent.com/71658927/159737458-1121ffac-209d-4b66-9140-d3b54ff9bdec.png)
+
 
 
 
