@@ -37,6 +37,25 @@ Para nuestro caso se utilizó la aplicación de MongoDB Compass
 
 ![image](https://user-images.githubusercontent.com/71658927/159728777-6fe6562b-7c5b-4cc8-92b9-abfb8ef73b04.png)
 
+1.3. Pruebas del API Local 
+
+Para poder ejecutar las pruebas se deberá descargar la collection (postman), la cual se deja en el repositorio  (este paso aplica tambien para la ejecución del API en Google Cloud)
+
+https://github.com/26julian26/service_xmen/blob/master/Test_Mercado_Libre.postman_collection.json
+
+![image](https://user-images.githubusercontent.com/71658927/159732955-3d0ad383-3d8f-4937-b8a4-41a69df281dd.png)
+
+Luego de importar la colección en postman se debe abrir el request “Local”-“01_mutant” para hacer pruebas de validación de la secuencia de ADN
+
+![image](https://user-images.githubusercontent.com/71658927/159735366-09806d5f-cf21-49f8-be96-d07ee8920066.png)
+
+Para realizar la prueba del servicio de stats se debe abrir el request “Local”-“02_stats”
+
+![image](https://user-images.githubusercontent.com/71658927/159735491-38c9c74f-0974-4bc9-b0e7-04fed8b18e19.png)
+
+
+1.4. Pruebas del API Google Cloud
+
 
 
 
