@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.xmen.adapter.router.error.handler.ResponseErrorMessageDTO;
 import com.xmen.adapter.router.facade.XmenFacade;
+import com.xmen.domain.models.Stats;
+
 import static com.xmen.adapter.router.consts.DataRouterConsts.MAPPING_POST_MUTANT;
 import static com.xmen.adapter.router.consts.DataRouterConsts.CROSS_ORIGIN;
 import static com.xmen.adapter.router.consts.DataRouterConsts.CONTROLLER_PATH;
@@ -63,17 +65,17 @@ public class XmenController {
 	
 	@RequestMapping(value = MAPPING_POST_STATS, method = RequestMethod.GET)
 	@ApiResponses(value = {
-			 @ApiResponse(code = 200, message=API_RESPONSE_COD_200),
+			 @ApiResponse(code = 200, message=API_RESPONSE_COD_200, response = Stats.class),
 			 @ApiResponse(code = 400, message=API_RESPONSE_COD_400, response = ResponseErrorMessageDTO.class),
 			 @ApiResponse(code = 422, message=API_RESPONSE_COD_422, response = ResponseErrorMessageDTO.class),
 			 @ApiResponse(code = 422, message=API_RESPONSE_COD_403, response = ResponseErrorMessageDTO.class),
 			 @ApiResponse(code = 500, message=API_RESPONSE_COD_500, response = ResponseErrorMessageDTO.class)
 			})	
-	public String stats(
+	public ResponseEntity<Object> stats(
             @ApiParam(value = API_PARAM_TIMESTAMP, required = true, example = MOCK_2020_02_21T10_00_00) @Valid @RequestHeader(name = HEADER_TIMESTAMP, required = true) String timeStamp,
             @ApiParam(value = API_PARAM_CONTENT_TYPE, required = true, example = MOCK_CONTENT_TYPE) @Valid @RequestHeader(name = HEADER_CONTENT_TYPE, required = true) String contentType			
 	    ) {
-	        return "stats";
+	        return xmenFacade.stats(timeStamp, contentType);
 	    }		
 	
 }

@@ -1,11 +1,14 @@
 package com.xmen.domain.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import com.xmen.domain.models.RequestInHeadersDTO;
+import com.xmen.domain.models.Stats;
 import com.xmen.domain.repository.XmenRepository;
 import com.xmen.domain.models.dna;
 
@@ -83,5 +86,23 @@ public class XmenService {
 			isMutant = true;
 		}
 		return isMutant;
+	}
+	
+	public ResponseEntity<Object> stats(RequestInHeadersDTO requestInHeaders) {
+		List<dna> dna = xmenRepository.findAll();
+		long countMutant = 0; 
+		long countHuman = 0;
+		double ratio = 0.0;
+				
+		for (dna dna2 : dna) {
+			if(dna2.isIsmutant()) {
+				countMutant+=1;
+			} else {
+				countHuman+=1;
+			}
+		}
+		ratio = countHuman/countMutant;		
+		Stats stats = new Stats(countMutant, countHuman, ratio); 
+		return new ResponseEntity<>(stats, HttpStatus.OK);
 	}
 }

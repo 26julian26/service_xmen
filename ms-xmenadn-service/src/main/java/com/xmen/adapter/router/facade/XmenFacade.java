@@ -28,7 +28,19 @@ public class XmenFacade {
 			return xmenService.validateMutants(requestInHeaders, request);
 		}
 	}
-
+	
+	public ResponseEntity<Object> stats(String timestamp, String contentType) {
+		String[] vectorFields = { timestamp, contentType };
+		// validar campos obligatorios que no esten vacios
+		if (!checkFields(vectorFields)) {
+			return enviarErrorParametrosFacade(API_OPERATION_COUNT_ACTIVE);
+		} else {
+			// instanciamos el objeto para los headers
+			RequestInHeadersDTO requestInHeaders = new RequestInHeadersDTO(timestamp, contentType);
+			return xmenService.stats(requestInHeaders);
+		}		
+	}
+	
 	private boolean checkFields(String[] vectorFields) {
 		List<String> fields = Arrays.asList(vectorFields);
 		for (String field : fields) {
@@ -38,5 +50,4 @@ public class XmenFacade {
 		}
 		return true;
 	}
-
 }

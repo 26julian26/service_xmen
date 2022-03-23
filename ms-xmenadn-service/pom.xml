@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.8</version>
+		<version>2.3.0.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.xmen</groupId>
 	<artifactId>ms-xmenadn-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
 	<name>ms-xmenadn-service</name>
 	<description>Servicio que implementa la validación de la secuencia de ADN para determinar si un humano es mutante</description>
 	<properties>
@@ -132,7 +132,7 @@
 		           <configuration>
 		            
 		             <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
-		             <repository>26julian26/ms-login-service</repository>
+		             <repository>26julian26/ms-xmenadn-service</repository>
 			          <tag>${project.version}</tag>
 			          <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 			          <buildArgs>
@@ -143,15 +143,15 @@
 		         </execution>
 		       </executions>
 	        </plugin>					
-			<plugin>
-				<groupId>com.google.cloud.tools</groupId>
-				<artifactId>appengine-maven-plugin</artifactId>
-				<version>2.1.0</version>
-				<configuration>
-					<version>1</version>
-					<projectId>GCLOUD_CONFIG</projectId>
-				</configuration>
-			</plugin>			
+		      <plugin>
+		        <groupId>com.google.cloud.tools</groupId>
+		        <artifactId>appengine-maven-plugin</artifactId>
+		        <version>2.2.0</version>
+		        <configuration>
+		          <version>1</version>
+		          <projectId>GCLOUD_CONFIG</projectId>
+		        </configuration>
+		      </plugin>			
 		</plugins>
 	</build>
 </project>
