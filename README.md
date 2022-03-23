@@ -21,7 +21,12 @@ docker run 26julian26/ms-xmenadn-service:1.0.1
 
 ![image](https://user-images.githubusercontent.com/71658927/159719588-434c47ce-99af-475d-b2e2-c7f8889ed4b6.png)
 
-Seguidamnete se debera ejecutar el postman 
+1.1. Base de datos MongoDB
+
+La imagen está apuntando a una base de datos en https://cloud.mongodb.com/ pero si se desea montar los fuentes en el ambiente local se deja un backup de la la base de datos en la carpeta Xmen
+
+![image](https://user-images.githubusercontent.com/71658927/159723844-09141e7b-0cb9-4294-8e05-8add73787c8f.png)
+
 
 
 
