@@ -101,7 +101,7 @@ public class XmenService {
 				countHuman+=1;
 			}
 		}
-		ratio = countHuman/countMutant;		
+		ratio = countHuman/countMutant;
 		Stats stats = new Stats(countMutant, countHuman, ratio); 
 		return new ResponseEntity<>(stats, HttpStatus.OK);
 	}
