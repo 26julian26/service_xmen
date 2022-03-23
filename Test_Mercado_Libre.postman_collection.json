@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "e0f6a505-95bf-419e-a51f-d6c281c35d87",
+		"name": "Test_Mercado_Libre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Local",
+			"item": [
+				{
+					"name": "01_mutant",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "timestamp",
+								"value": "2022-03-20T10:00:00",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dna\": [\"ATGCGA\", \"CAGTGC\", \"TTATGT\", \"AGAAGG\", \"CCCCTA\", \"TCACTG\"]\n}\t\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/mutant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_stats",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "timestamp",
+								"value": "2022-03-20T10:00:00",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/stats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cloud_Google",
+			"item": [
+				{
+					"name": "01_mutant Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "timestamp",
+								"value": "2022-03-20T10:00:00",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dna\": [\"ATGCGA\", \"CAGTGC\", \"TTATGT\", \"AGAAGG\", \"CCCCTA\", \"TCACTG\"]\n}"
+						},
+						"url": {
+							"raw": "https://xmen-344921.uc.r.appspot.com/mutant",
+							"protocol": "https",
+							"host": [
+								"xmen-344921",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"mutant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02_stats Copy",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "timestamp",
+								"value": "2022-03-20T10:00:00",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://xmen-344921.uc.r.appspot.com/stats",
+							"protocol": "https",
+							"host": [
+								"xmen-344921",
+								"uc",
+								"r",
+								"appspot",
+								"com"
+							],
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
